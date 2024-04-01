@@ -1,0 +1,548 @@
+@font-face {
+  font-family: "AmsiPro-UltraItalic";
+  src: url("../fonts/AmsiPro-UltraItalic.ttf") format("woff2"), url("../fonts/AmsiPro-UltraItalic.ttf") format("woff"); /* Older Browsers */
+  /* Add additional font formats as needed */
+}
+@font-face {
+  font-family: "AmsiPro-Regular";
+  src: url("../fonts/AmsiPro-Regular.ttf") format("woff2"), url("../fonts/AmsiPro-Regular.ttf") format("woff"); /* Older Browsers */
+  /* Add additional font formats as needed */
+}
+body {
+  font-family: "AmsiPro-Regular";
+  background-color: white;
+}
+
+@keyframes pulsate {
+  0% {
+    transform: scale(1);
+  }
+  50% {
+    transform: scale(1.1);
+  }
+  100% {
+    transform: scale(1);
+  }
+}
+.btn {
+  transition: transform 0.5s;
+}
+.btn:hover {
+  animation: pulsate 1s infinite;
+}
+
+.navbar {
+  background: linear-gradient(180deg, #000 0, rgba(0, 0, 0, 0.738) 19%, rgba(0, 0, 0, 0.541) 34%, rgba(0, 0, 0, 0.382) 47%, rgba(0, 0, 0, 0.278) 56.5%, rgba(0, 0, 0, 0.194) 65%, rgba(0, 0, 0, 0.126) 73%, rgba(0, 0, 0, 0.075) 80.2%, rgba(0, 0, 0, 0.042) 86.1%, rgba(0, 0, 0, 0.021) 91%, rgba(0, 0, 0, 0.008) 95.2%, rgba(0, 0, 0, 0.002) 98.2%, transparent);
+  transition: top 0.5s; /* Add smooth transition */
+  padding: 10px;
+  display: flex;
+  align-items: center;
+}
+.navbar .navbar-toggler {
+  border-color: white;
+  border-width: 3px;
+}
+.navbar .navbar-brand {
+  max-width: 30%;
+  margin-right: 0px;
+}
+.navbar .navbar-brand img {
+  width: 100%;
+}
+.navbar .nav-item {
+  text-align: center;
+}
+.navbar li {
+  margin: 0 15px;
+}
+.navbar li a {
+  font-family: "AmsiPro-UltraItalic";
+  text-transform: uppercase;
+  color: white;
+  font-size: 1.1rem;
+  transition: transform 0.3s ease;
+}
+.navbar li a:hover {
+  transform: scale(1.1);
+  color: rgb(147, 212, 218);
+}
+.navbar .collapse.navbar-collapse {
+  justify-content: center;
+}
+.navbar .call__button {
+  margin-left: auto;
+  background-color: rgb(239, 62, 66);
+}
+
+.navbar.hidden {
+  top: -100px; /* Move navbar off-screen */
+}
+
+.call__button {
+  background-color: rgb(239, 62, 66);
+  border-radius: 15px;
+  color: white;
+  font-weight: bold;
+  box-shadow: 4px 4px 4px rgba(0, 0, 0, 0.9);
+}
+.call__button i {
+  margin-right: 10px;
+}
+.call__button:hover {
+  background-color: rgb(147, 212, 218);
+}
+
+@media (min-width: 992px) {
+  .navbar .collapse.navbar-collapse {
+    flex-grow: 1;
+    order: 2; /* Move the menu below */
+  }
+  .navbar .call__button__container {
+    order: 3; /* Move the call button to the right */
+  }
+}
+.overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(255, 255, 255, 0.7); /* Adjust the opacity as needed */
+  z-index: 1;
+  overflow: hidden;
+}
+
+.banner {
+  width: 100%;
+  height: 100vh;
+  background-color: #000;
+  overflow: hidden;
+  position: relative;
+  display: flex;
+}
+.banner .parallax__container {
+  height: 100%; /* Adjusted height */
+  position: absolute;
+  z-index: 0;
+  right: 0;
+  left: 0;
+  top: 0;
+  background-image: url("../assets/xraybanner2.jpg");
+  background-color: transparent;
+  background-size: cover;
+  background-attachment: fixed;
+  background-repeat: no-repeat;
+}
+.banner .banner__container {
+  display: flex;
+  flex: 1;
+  align-items: center;
+  width: 100%;
+  justify-content: center;
+  z-index: 2;
+}
+.banner .banner__container .banner__logo img {
+  width: 400px;
+  height: 306px;
+}
+
+.xray__section {
+  position: relative;
+  padding: 30px 0px;
+  overflow-x: hidden;
+  z-index: 1;
+  background: linear-gradient(0deg, rgb(255, 255, 255) 0%, rgb(0, 0, 0) 20%, rgb(0, 0, 0) 100%);
+}
+.xray__section .xray__content {
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 100%;
+  z-index: 1;
+  margin: 120px 250px;
+}
+.xray__section .xray__content .xray__content__image {
+  display: flex;
+  justify-content: center;
+  width: 50%;
+}
+.xray__section .xray__content .xray__content__image img {
+  margin-left: 40px;
+  width: 100%;
+  border-radius: 25px;
+  border: solid 3px white;
+}
+.xray__section .xray__content .xray__content__text {
+  width: 50%;
+  text-align: left;
+  justify-content: center;
+}
+.xray__section .xray__content .xray__content__text h1 {
+  font-family: "AmsiPro-UltraItalic";
+  font-size: 1.8rem;
+  color: white;
+  margin-bottom: 30px;
+}
+.xray__section .xray__content .xray__content__text p {
+  font-size: 1.2rem;
+  color: rgb(147, 212, 218);
+  position: relative;
+  z-index: 2;
+  font-weight: 500;
+  margin-bottom: 40px;
+}
+.xray__section .xray__content .xray__content__text .buttons__container {
+  justify-content: start;
+  margin-top: 30px;
+}
+.xray__section .xray__content .xray__content__text .buttons__container .contactus__button {
+  background-color: rgb(239, 62, 66);
+  border-radius: 20px;
+  color: white;
+  text-transform: uppercase;
+  font-weight: bold;
+  font-size: 1rem;
+  box-shadow: 4px 4px 4px rgba(0, 0, 0, 0.9);
+}
+.xray__section .xray__content .xray__content__text .buttons__container .contactus__button i {
+  margin-right: 10px;
+}
+.xray__section .xray__content .xray__content__text .buttons__container .contactus__button:hover {
+  background-color: rgb(147, 212, 218);
+}
+
+@media (max-width: 992px) {
+  .xray__section .xray__content {
+    flex-direction: column;
+    margin: 0px 20px;
+    margin-top: 100px;
+    margin-bottom: 50px;
+  }
+  .xray__section .xray__content .xray__content__left {
+    flex: 1;
+    margin-right: 0px; /* Adjust spacing */
+    padding: 0px 20px;
+    width: 100%;
+    padding: 0px;
+  }
+  .xray__section .xray__content .xray__content__text {
+    flex: 1;
+    text-align: center;
+    padding: 0px 20px;
+    width: 100%;
+    margin-bottom: 50px;
+  }
+  .xray__section .xray__content .xray__content__text p {
+    margin-bottom: 20px;
+  }
+  .xray__section .xray__content .xray__content__text .buttons__container {
+    justify-content: center;
+  }
+  .xray__section .xray__content .xray__content__image {
+    width: 100%;
+  }
+  .xray__section .xray__content .xray__content__image img {
+    margin: 0;
+  }
+}
+.background__change {
+  background: white;
+}
+.background__change .xray__content .xray__content__text h2 {
+  font-family: "AmsiPro-UltraItalic";
+  font-size: 2rem;
+  color: rgb(51, 82, 150);
+  margin-bottom: 30px;
+}
+.background__change .xray__content .xray__content__text p {
+  font-size: 1rem;
+  color: black;
+  position: relative;
+  z-index: 2;
+  font-weight: 600;
+  margin-bottom: 40px;
+  line-height: 2;
+}
+
+@media (max-width: 992px) {
+  .background__change .xray__content {
+    margin-top: 50px;
+  }
+}
+.aboutus__section {
+  position: relative;
+  display: flex;
+  padding: 50px 0px;
+  overflow-x: hidden;
+  z-index: 1;
+  background: linear-gradient(180deg, rgb(255, 255, 255) 0%, rgb(0, 0, 0) 20%, rgb(0, 0, 0) 100%);
+  height: 100vh;
+}
+.aboutus__section .aboutus__content {
+  position: relative;
+  display: flex;
+  height: 100%;
+  z-index: 1;
+  margin: 0px 40px;
+  line-height: 2;
+  flex-grow: 1;
+  align-items: stretch;
+}
+.aboutus__section .aboutus__content .aboutus__content__tittle {
+  display: flex;
+  flex-direction: column;
+  width: 30%;
+  text-align: center;
+  justify-content: center;
+  padding: 0 50px;
+  margin: 0 50px;
+}
+.aboutus__section .aboutus__content .aboutus__content__tittle h2 {
+  font-family: "AmsiPro-UltraItalic";
+  font-size: 2.2rem;
+  color: rgb(239, 62, 66);
+  margin-bottom: 20px;
+}
+.aboutus__section .aboutus__content .aboutus__content__tittle p {
+  font-size: 0.9rem;
+  color: rgb(161, 159, 159);
+  position: relative;
+  z-index: 2;
+  font-weight: 600;
+}
+.aboutus__section .aboutus__content .aboutus__content__items__card {
+  display: flex;
+  flex-direction: column;
+  text-align: center;
+  width: 30%;
+  padding: 0 50px;
+  align-items: center;
+}
+.aboutus__section .aboutus__content .aboutus__content__items__card .card__left {
+  align-items: start;
+}
+.aboutus__section .aboutus__content .aboutus__content__items__card img {
+  height: 100px;
+  width: 100px;
+}
+.aboutus__section .aboutus__content .aboutus__content__items__card h2 {
+  font-family: "AmsiPro-UltraItalic";
+  font-size: 1.2rem;
+  color: white;
+  margin-bottom: 20px;
+}
+.aboutus__section .aboutus__content .aboutus__content__items__card p {
+  font-size: 0.9rem;
+  color: rgb(161, 159, 159);
+  position: relative;
+  z-index: 2;
+  font-weight: 600;
+  margin-bottom: 50px;
+}
+.aboutus__section .aboutus__content .card__right {
+  justify-content: end;
+}
+
+@media (max-width: 992px) {
+  .aboutus__section {
+    height: auto;
+  }
+  .aboutus__section .aboutus__content {
+    margin: 0px 40px;
+    flex-direction: column;
+  }
+  .aboutus__section .aboutus__content .aboutus__content__tittle {
+    width: 100%;
+    margin: 0;
+    padding: 0;
+    margin-bottom: 50px;
+  }
+  .aboutus__section .aboutus__content .aboutus__content__items__card {
+    width: 100%;
+    padding: 0;
+  }
+  .aboutus__section .aboutus__content .aboutus__content__items__card h2 {
+    margin-bottom: 10px;
+  }
+}
+.contact__container {
+  background-color: white; /* Light gray background color */
+  justify-content: center;
+  padding: 50px 0;
+  text-align: center;
+  border: none;
+}
+.contact__container .contact__tittle__container {
+  color: rgb(51, 82, 150);
+  font-family: "AmsiPro-UltraItalic";
+  text-transform: uppercase;
+  margin-bottom: 50px;
+}
+.contact__container .contact__tittle__container .contact__title {
+  display: inline-block;
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
+  font-size: 2.3rem;
+  margin: 0 20px; /* Adjust margin to match the divider width */
+}
+.contact__container .contact__content {
+  margin: 20px 0px;
+  color: rgb(161, 159, 159);
+  justify-content: center;
+}
+.contact__container .contact__content .contact__card {
+  margin: 10px 30px;
+  padding: 20px 50px;
+  width: 30%;
+  background-color: rgba(0, 0, 0, 0.8);
+  border-radius: 25px;
+  box-shadow: -1px 1px 12px 5px rgba(0, 0, 0, 0.2);
+  -webkit-box-shadow: -1px 1px 12px 5px rgba(0, 0, 0, 0.2);
+  -moz-box-shadow: -1px 1px 12px 5px rgba(0, 0, 0, 0.2);
+}
+.contact__container .contact__content .contact__card .contact__icon {
+  text-align: center;
+  height: 60px;
+  width: 60px;
+  margin-bottom: 20px;
+  background-color: rgb(51, 82, 150);
+  padding: 15px;
+  border-radius: 50px;
+  font-size: 24px;
+  color: white;
+}
+.contact__container .contact__content .contact__card h3 {
+  color: white;
+  font-size: 1.6rem;
+  font-family: "AmsiPro-UltraItalic";
+  margin-bottom: 20px;
+}
+.contact__container .contact__content .contact__card .description {
+  font-size: 1rem;
+  font-weight: 700;
+  line-height: 2;
+}
+.contact__container .contact__content .contact__card .description a {
+  text-decoration: none;
+  font-family: "AmsiPro-UltraItalic";
+  color: white;
+  font-weight: 500;
+}
+.contact__container .contact__content .contact__card .whatsapp__button {
+  background-color: rgb(239, 62, 66);
+}
+.contact__container .contact__content .contact__card .whatsapp__button:hover {
+  background-color: rgb(147, 212, 218);
+  color: white;
+}
+
+.map__frame {
+  position: relative;
+  padding: 25px;
+  min-height: 500px;
+}
+.map__frame iframe {
+  height: 500px;
+  border-radius: 5px;
+  position: relative;
+  z-index: 2;
+  box-shadow: 4px 4px 4px rgba(0, 0, 0, 0.9);
+}
+
+@media (max-width: 992px) {
+  .contact__container {
+    padding: 30px;
+  }
+  .contact__container .contact__content {
+    margin: 10px 0px;
+    flex-direction: column;
+  }
+  .contact__container .contact__content .contact__card {
+    margin: 20px 0px;
+    padding: 5px 10px;
+    width: 100%;
+  }
+  .contact__container .contact__content .contact__card .contact__title {
+    font-size: 1.8rem;
+  }
+  .contact__container .contact__content .contact__card h3 {
+    font-size: 1.4rem;
+  }
+  .contact__container .contact__content .contact__card p {
+    font-size: 1.2rem;
+  }
+  .map__frame {
+    padding: 0;
+  }
+}
+.whatsapp__button {
+  background-color: rgb(51, 82, 150);
+  border-radius: 30px;
+  color: white;
+  box-shadow: 4px 4px 4px rgba(0, 0, 0, 0.9);
+  font-family: "AmsiPro-UltraItalic";
+  font-size: 1.2rem;
+}
+.whatsapp__button:hover {
+  background-color: rgb(239, 62, 66);
+}
+.whatsapp__button .whatsapp__logo {
+  margin-right: 8px;
+  width: 30px;
+}
+
+.whatsapp__round {
+  position: fixed;
+  bottom: 40px;
+  right: 40px;
+  z-index: 999;
+  transition: transform 0.3s ease-in-out;
+}
+.whatsapp__round:hover {
+  transform: scale(1.1);
+}
+.whatsapp__round img {
+  width: 80px; /* Adjust size as needed */
+  height: auto;
+  border-radius: 30%;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+}
+
+.footer__container {
+  background-color: black;
+  color: white;
+  text-align: center;
+  padding: 20px 0;
+  position: relative;
+}
+
+.footer__logo {
+  width: 250px; /* Adjust width as needed */
+  height: auto; /* Maintain aspect ratio */
+}
+
+.footer__disclaimer {
+  font-size: 1.1rem;
+}
+
+@media (max-width: 992px) {
+  .whatsapp__round {
+    bottom: 20px;
+    right: 40px;
+  }
+  .whatsapp__round img {
+    width: 70px; /* Adjust size as needed */
+  }
+  .footer__container {
+    padding: 15px;
+  }
+  .footer__container .footer__logo {
+    width: 150px;
+  }
+  .footer__container p {
+    font-size: 0.8rem;
+    text-shadow: 2px 2px 2px rgba(0, 0, 0, 0.3);
+  }
+}
+
+/*# sourceMappingURL=main.css.map */
